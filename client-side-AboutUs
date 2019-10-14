@@ -12,3 +12,14 @@
 [Links](blog_post_1_doc)
 
 [Please email us to Join our group!](UXdesigners@gmail.com)
+
+
+
+
+
+
+
+
+
+Question: What kinds of functionality would it be better to do on the client side rather than on the server? 
+The functionality that is better on the client side rather than on the server are types of things that do not need to be pulled from the server such as certain UI characteristics. The fact that a header should be bold or centered is something that is done on the client side. Furthermore, the group photo is not stored locally but is a link therefore, this should be on client side since it can be accessed from anywhere. A link connecting this page to the blog post should be on client side because it is only a link, the actual blog posts are in the database, therefore that is server-side but on client side you see the words that are clickable which will lead you to the serverside information.
