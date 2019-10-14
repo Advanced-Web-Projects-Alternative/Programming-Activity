@@ -8,7 +8,8 @@ view/filter for articles (2) like article (3) comment on article and (4) “liki
 tables: author_table, post_table, and comments_table.
 
 Table 1: author_table
-Purpose: Authors are able to register on our blog by entering their full-name, email, creating a password, and creating a short bio. The columns need would be:
+Purpose: Authors are able to register on our blog by entering their full-name, email, creating a password, and creating a 
+short bio. The columns need would be:
 
 author_id (INT)
 author_first (VARCHAR 50)
@@ -17,13 +18,15 @@ author_email (VARCHAR 255)
 author_password (VARCHAR 30)
 author_bio (CLOB)
 
-| author_id  | author_first | author_last | author_email | author_password | author_bio     |
+| author_id     | author_first    | author_last     | author_email      | author_password         | author_bio         |
 | ------------- |:---------------:| ---------------:|------------------:|------------------------:|-------------------:|
-| cell1         |   cell2          |   cell3         |    cell4            |          cell5            |     cell6            |
-| column1   |   column2    |   column     |   column4      |          column5      |    column6       |
+| cell1         |  cell2          |  cell3          |  cell4            |  cell5                  |  cell6             |
+| column1       |  column2        |  column         |  column4          |  column5                |  column6           |
 
 Table 2 :post_table
-Purpose: When an author posts an article the data is written to the database and captures the date of submission, the article title and content, the category of content (e.g. information architecture, wireframing) and also write to database when a user likes or comments on a post.
+Purpose: When an author posts an article the data is written to the database and captures the date of submission, the 
+article title and content, the category of content (e.g. information architecture, wireframing) and also write to database 
+when a user likes or comments on a post.
 
 post_id (INT)
 post_date (DATE)
@@ -33,13 +36,14 @@ Post_category (VARCHAR 30)
 Post_likes (INT)
 Post_comments (INT)
 
-| post_id  | post_date | post_title | post_content | pos_category | post_likes | post_comments
+| post_id     | post_date     | post_title   | post_content      | pos_category       | post_likes    | post_comments
 | ----------- |:-------------:| ------------:|------------------:|-------------------:|--------------:|---------------------:|
-| cell1       | cell2         |   cell3      |    cell4            |    cell5            |  cell6        | cell7                  |
-| column1 | column2   |  column3  |   column4      |    column5      |  column6  | column7           |
+| cell1       | cell2         |  cell3       |  cell4            |  cell5             |  cell6        | cell7                |
+| column1     | column2       |  column3     |  column4          |  column5           |  column6      | column7              |
 
 Table 3 :comment_table
-Purpose: Readers/users can comment on posts, and enter their name if they would like. The date the comment and/or likes is written to the database. 
+Purpose: Readers/users can comment on posts, and enter their name if they would like. The date the comment and/or likes is 
+written to the database. 
 
 Comment_id (INT)
 comment_name (VARCHAR 255)
@@ -47,13 +51,14 @@ comment_date (DATE)
 Comment_content (CLOB)
 Comment_likes (INT)
 
-| comment_id  | comment_name | comment_date | comment_content | comment_likes
+| comment_id        | comment_name           | comment_date         | comment_content          | comment_likes
 | ----------------- |:----------------------:| --------------------:|-------------------------:|-------------------:|
-| cell1              |   cell2                  |   cell3                |   cell4                    |  cell5              |      
-| column1        |   column2            |   column3         |  column4                | column5        |         
+| cell1             |  cell2                 |  cell3               |  cell4                   |  cell5             |      
+| column1           |  column2               |  column3             |  column4                 | column5            |         
 
 CRUD Operations
-Given the actions listed above for both user profiles. The below are a few examples of CRUD operations that would be executed.
+Given the actions listed above for both user profiles. The below are a few examples of CRUD operations that would be 
+executed.
 
 Administrator CRUD operations
 Register as author/admin
@@ -67,7 +72,9 @@ VALUES
 Upload blog post
 
 INSERT INTO 
-post_table (post_id,post_date, post_title, post_category, post_content (CLOB), Post_category (VARCHAR 30), Post_likes (INT) Post_comments (INT)
+post_table (post_id,post_date, post_title, post_category, post_content (CLOB), Post_category (VARCHAR 30), Post_likes (INT) 
+Post_comments (INT)
+
 VALUES
 (1, 03-Sep-2019, ‘Wireframing 101’, ‘Intro to UX’,  ‘article content’);
 
@@ -78,23 +85,29 @@ Filter for posts by author
 SELECT
 First_name
 last_name
+
 FROM
-	post_table
+post_table
 	
 
 Comment and like a post
 
 INSERT INTO
 Comment_table (Comment_id, comment_name, comment_date, comment_content, comment_likes)
+
 VALUES
-	(1, John Blogreader, 03-Sep-2019, “Comments…”, 1)
+(1, John Blogreader, 03-Sep-2019, “Comments…”, 1)
 	
 
 CMS Security
 For this blog several security concerns need to be addressed: 
-Backing up content: In the event that the blog is compromised, it would be wise for us to have the content backed-up somewhere else other than just the one server.
-Password safety: Authors who register on the blog should be forced to create a password that is difficult to guess/hack. Most importantly, we need to protect the server where all of that information lives as it is more likely to be taken from the server, rather than someone “guessing” an individual’s login credentials. 
-Hack attempt notification: For our blog we might want to invest in services that notify when someone has attempted to attack our blog. This gives us time to take any measures, or update passwords to ensure the security of the blog. 
+Backing up content: In the event that the blog is compromised, it would be wise for us to have the content backed-up 
+somewhere else other than just the one server.
+Password safety: Authors who register on the blog should be forced to create a password that is difficult to guess/hack. 
+Most importantly, we need to protect the server where all of that information lives as it is more likely to be taken from 
+the server, rather than someone “guessing” an individual’s login credentials. 
+Hack attempt notification: For our blog we might want to invest in services that notify when someone has attempted to attack
+our blog. This gives us time to take any measures, or update passwords to ensure the security of the blog. 
 
 
 
