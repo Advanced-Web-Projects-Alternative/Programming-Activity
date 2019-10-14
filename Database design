@@ -1,7 +1,11 @@
 ## DATABASE
-Using phpMyAdmin we will need to create a MySQL database to manage parts of our blog’s content. If built using PHP, then MySQLi will bridge the functionality from the application to the database. 
+Using phpMyAdmin we will need to create a MySQL database to manage parts of our blog’s content. If built using PHP, then 
+MySQLi will bridge the functionality from the application to the database. 
 
-There are two user profiles for our blog, an Administrator (author) and a user. Both profiles have a limited set of actions that can be taken.  Admin actions consist of (1) register as author and (2) write/edit articles. User actions consist of (1) view/filter for articles (2) like article (3) comment on article and (4) “liking” a comment. For this we'll need three tables: author_table, post_table, and comments_table.
+There are two user profiles for our blog, an Administrator (author) and a user. Both profiles have a limited set of actions 
+that can be taken.  Admin actions consist of (1) register as author and (2) write/edit articles. User actions consist of (1) 
+view/filter for articles (2) like article (3) comment on article and (4) “liking” a comment. For this we'll need three 
+tables: author_table, post_table, and comments_table.
 
 Table 1: author_table
 Purpose: Authors are able to register on our blog by entering their full-name, email, creating a password, and creating a short bio. The columns need would be:
